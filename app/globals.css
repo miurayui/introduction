@@ -43,3 +43,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* globals.css */
+
+.typing-effect {
+  display: flex;
+  white-space: nowrap;
+  font-family: monospace;
+  position: relative;
+}
+
+/* カーソル（点滅する棒）だけを独立させる */
+.cursor {
+  border-right: 3px solid #166534;
+  animation: blink .5s step-end infinite alternate;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* 速度調整用のクラス（お好みで） */
+.after-typing .cursor {
+  display: none; /* 並び替えが始まったらカーソルを消す */
+}
