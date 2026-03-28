@@ -1,14 +1,19 @@
 "use client";
-import { motion } from "motion/react";
+import  Hero  from "../compornents/hero";
+import  About  from "../compornents/about";
+import  Skills  from "../compornents/skills";
+import  Path  from "../compornents/path";
+import  Roots  from "../compornents/roots";
 
 export default function Sample() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      Hello Motion!
-    </motion.div>
+    <main className="bg-white">
+       <Hero />
+       <About />
+       <Skills />
+       <Path />
+       <Roots />
+    </main>
+    
   );
 }
