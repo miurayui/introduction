@@ -4,6 +4,7 @@ import  About  from "../compornents/about";
 import  Skills  from "../compornents/skills";
 import  Path  from "../compornents/path";
 import  Roots  from "../compornents/roots";
+import  Scrollup  from "../compornents/scrollup";
 
 export default function Sample() {
   return (
@@ -13,6 +14,7 @@ export default function Sample() {
        <Skills />
        <Path />
        <Roots />
+       <Scrollup />
     </main>
     
   );
