@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { fadeInUp, viewportSettings } from '../collections/popup';
+import SectionTitle from './sectionTitle';
 
 const milestones = [
   {
@@ -28,26 +29,15 @@ const milestones = [
 
 export default function Path() {
   return (
-    <section className="min-h-screen bg-[#F8FAFC] py-32 px-6 overflow-hidden">
+    <section id="path" className="min-h-screen bg-[#F8FAFC] py-32 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
-        
-        {/* タイトルセクション */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportSettings}
-          variants={fadeInUp}
-          custom={0} // 遅延なし
-          className="text-center mb-24"
-        >
-          <h2 className="text-sm tracking-[0.3em] text-[#166534] uppercase font-bold mb-4">
-            path
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-bold font-mono tracking-tight text-[#0F172A]">
-            History
-          </h3>
-        </motion.div>
 
+        {/* タイトルセクション */}
+        <SectionTitle
+          subtitle="path"
+          title="History"
+        />
+        
         <div className="relative">
           {/* 中央の垂直線（一筆書きのメインライン） */}
           <div className="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[1px] bg-[#166534] opacity-20" />
@@ -61,18 +51,16 @@ export default function Path() {
                 viewport={viewportSettings}
                 variants={fadeInUp}
                 custom={index * 0.1}
-                className={`relative flex items-center justify-between md:justify-normal w-full ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                className={`relative flex items-center justify-between md:justify-normal w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
               >
                 {/* 線上の点（雫の落ちる場所） */}
                 <div className="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 w-2 h-2 rounded-full bg-[#166534] z-10 border-4 border-[#F8FAFC] box-content" />
 
                 {/* コンテンツボックス */}
                 <div className="w-[calc(100%-60px)] md:w-[45%] pl-10 md:pl-0">
-                  <div className={`p-6 rounded-2xl bg-white border border-[#E2E8F0] shadow-sm hover:border-[#166534]/20 transition-colors ${
-                    index % 2 === 0 ? 'md:text-left' : 'md:text-right'
-                  }`}>
+                  <div className={`p-6 rounded-2xl bg-white border border-[#E2E8F0] shadow-sm hover:border-[#166534]/20 transition-colors ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'
+                    }`}>
                     <span className="font-mono text-[#166534] font-bold text-lg mb-2 block italic">
                       {item.year}
                     </span>

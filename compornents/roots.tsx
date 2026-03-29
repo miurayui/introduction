@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { fadeInUp, viewportSettings } from '../collections/popup';
+import SectionTitle from './sectionTitle';
 
 const rootItems = [
   {
@@ -20,25 +21,14 @@ const rootItems = [
 
 export default function Roots() {
   return (
-    <section className="min-h-screen bg-white py-32 px-6 flex flex-col items-center">
+    <section id="roots" className="min-h-screen bg-white py-32 px-6 flex flex-col items-center">
       <div className="max-w-5xl w-full">
-        
-         {/* タイトルセクション */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportSettings}
-          variants={fadeInUp}
-          custom={0} // 遅延なし
-          className="text-center mb-24"
-        >
-          <h2 className="text-sm tracking-[0.3em] text-[#166534] uppercase font-bold mb-4">
-            About Me
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-bold font-mono tracking-tight text-[#0F172A]">
-            Creative Journey
-          </h3>
-        </motion.div>
+
+        {/* タイトルセクション */}
+        <SectionTitle
+          subtitle="roots"
+          title="Tarning Point"
+        />
 
         <div className="space-y-40">
           {rootItems.map((item, index) => (
@@ -49,9 +39,8 @@ export default function Roots() {
               viewport={viewportSettings}
               variants={fadeInUp}
               custom={index * 0.2}
-              className={`flex flex-col md:flex-row gap-12 items-start ${
-                index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-              }`}
+              className={`flex flex-col md:flex-row gap-12 items-start ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''
+                }`}
             >
               {/* 左側（または右側）：大きな見出しと言葉 */}
               <div className="md:w-1/2 space-y-6">
