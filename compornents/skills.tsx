@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { fadeInUp, viewportSettings } from '../collections/popup';
+import SectionTitle from './sectionTitle';
 
 const skillCategories = [
   {
@@ -36,25 +37,15 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section className="min-h-screen bg-[#F8FAFC] flex flex-col items-center py-32 px-6 font-sans text-[#1E293B]">
+    <section id="skills" className="min-h-screen bg-[#F8FAFC] flex flex-col items-center py-32 px-6 font-sans text-[#1E293B]">
       <div className="max-w-6xl w-full">
 
         {/* セクションタイトル */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportSettings}
-          variants={fadeInUp}
-          custom={0}
-          className="text-center mb-24"
-        >
-          <h2 className="text-sm tracking-[0.3em] text-[#166534] uppercase font-bold mb-4">
-            Capabilities
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-bold font-mono tracking-tight text-[#0F172A]">
-            Tools & Technologies
-          </h3>
-        </motion.div>
+
+        <SectionTitle
+          subtitle="Capabilities"
+          title="Tools & Technologies"
+        />
 
         {/* コンテンツエリア */}
         <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12">

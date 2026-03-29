@@ -3,31 +3,21 @@
 
 import { motion } from 'motion/react';
 import { fadeInUp, viewportSettings } from '../collections/popup';
+import SectionTitle from './sectionTitle';
 
 export default function About() {
   return (
-    <section className="min-h-screen bg-[#F8FAFC] flex flex-col items-center justify-center px-6 py-24 font-sans text-[#1E293B]">
+    <section id="about" className="min-h-screen bg-[#F8FAFC] flex flex-col items-center justify-center px-6 py-24 font-sans text-[#1E293B]">
       <div className="max-w-3xl w-full space-y-16">
-        
+
         {/* タイトルセクション */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportSettings}
-          variants={fadeInUp}
-          custom={0} // 遅延なし
-          className="text-center"
-        >
-          <h2 className="text-sm tracking-[0.3em] text-[#166534] uppercase font-bold mb-4">
-            About Me
-          </h2>
-          <h3 className="text-4xl md:text-5xl font-bold font-mono tracking-tight text-[#0F172A]">
-            Creative Journey
-          </h3>
-        </motion.div>
+        <SectionTitle
+          subtitle="About Me"
+          title="Creative Journey"
+        />
 
         {/* 文章セクション */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={viewportSettings}
@@ -55,7 +45,7 @@ export default function About() {
         </motion.div>
 
         {/* 装飾：控えめなライン */}
-        <motion.div 
+        <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 0.3 }}
           viewport={viewportSettings}
