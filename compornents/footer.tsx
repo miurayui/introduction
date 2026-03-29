@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from 'motion/react';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 

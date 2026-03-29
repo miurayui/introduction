@@ -13,6 +13,20 @@ export default function Header() {
     { name: 'Roots', href: '#roots' },
   ];
 
+  // --- スクロールロックの制御 ---
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // クリーンアップ関数（コンポーネントがアンマウントされた際のリセット用）
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]); // isOpenが変わるたびに実行
+
   useEffect(() => {
     const handleScroll = () => {
       // 50px以上スクロールしたら背景を出す
@@ -25,57 +39,60 @@ export default function Header() {
   const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ease-in-out ${isScrolled
-        ? 'py-4 bg-white/80 backdrop-blur-md shadow-sm border-b border-[#166534]/5'
-        : 'py-8 bg-transparent border-b border-transparent'
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
+    <>
 
-        {/* 左側：ロゴ */}
-        <div className="flex items-center gap-2 group cursor-pointer">
-          <div className={`w-1.5 h-1.5 rounded-full bg-[#166534] transition-transform duration-500 ${isScrolled ? 'scale-110' : 'scale-100'}`} />
-          <span className="font-mono font-bold text-[#0F172A] tracking-tighter text-lg">
-            Yui.
-          </span>
+      <header
+        className={`fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-in-out ${isScrolled
+          ? 'py-4 bg-white/80 backdrop-blur-md shadow-sm border-b border-[#166534]/5'
+          : 'py-8 bg-transparent border-b border-transparent'
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
+
+          {/* 左側：ロゴ */}
+          <div className="flex items-center gap-2 group cursor-pointer">
+            <div className={`w-1.5 h-1.5 rounded-full bg-[#166534] transition-transform duration-500 ${isScrolled ? 'scale-110' : 'scale-100'}`} />
+            <span className="font-mono font-bold text-[#0F172A] tracking-tighter text-lg">
+              Yui.
+            </span>
+          </div>
+
+          {/* 右側：ナビゲーション（最初から表示） */}
+          <nav className="hidden md:flex items-center gap-10">
+            {['About', 'Path', 'Skills', 'Roots'].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#64748B] hover:text-[#166534] transition-colors relative group"
+              >
+                {item}
+                {/* ホバー時の下線：一筆書きのメタファー */}
+                <span className="absolute -bottom-1 left-0 w-0 h-[px] bg-[#166534] opacity-40 transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
+
+          {/* モバイル用：ハンバーガーボタン */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex flex-col gap-1.5 z-[140] p-2"
+            aria-label="Toggle Menu"
+          >
+            <motion.div
+              animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              className="w-6 h-[1px] bg-[#166534]"
+            />
+            <motion.div
+              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="w-4 h-[1px] bg-[#166534]"
+            />
+            <motion.div
+              animate={isOpen ? { rotate: -45, y: -7, width: "24px" } : { rotate: 0, y: 0, width: "16px" }}
+              className="h-[1px] bg-[#166534]"
+            />
+          </button>
         </div>
-
-        {/* 右側：ナビゲーション（最初から表示） */}
-        <nav className="hidden md:flex items-center gap-10">
-          {['About', 'Path', 'Skills', 'Roots'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#64748B] hover:text-[#166534] transition-colors relative group"
-            >
-              {item}
-              {/* ホバー時の下線：一筆書きのメタファー */}
-              <span className="absolute -bottom-1 left-0 w-0 h-[px] bg-[#166534] opacity-40 transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
-        </nav>
-
-        {/* モバイル用：ハンバーガーボタン */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1.5 z-[140] p-2"
-          aria-label="Toggle Menu"
-        >
-          <motion.div
-            animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-            className="w-6 h-[1px] bg-[#166534]"
-          />
-          <motion.div
-            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="w-4 h-[1px] bg-[#166534]"
-          />
-          <motion.div
-            animate={isOpen ? { rotate: -45, y: -7, width: "24px" } : { rotate: 0, y: 0, width: "16px" }}
-            className="h-[1px] bg-[#166534]"
-          />
-        </button>
-      </div>
+      </header>
 
       {/* モバイル用フルスクリーンメニュー */}
       <AnimatePresence>
@@ -107,8 +124,8 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
 
+    </>
   );
 }
 
