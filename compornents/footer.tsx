@@ -22,7 +22,7 @@ export default function Footer() {
 
         {/* 中央：SNS・リンク */}
         <div className="flex gap-8 font-mono text-sm text-[#475569]">
-          <a href="https://github.com" target="_blank" className="hover:text-[var(--primary)] transition-colors">GitHub</a>
+          <a href="https://github.com/miurayui/introduction" target="_blank" className="hover:text-[var(--primary)] transition-colors">GitHub</a>
         </div>
 
         {/* 右側：コピーライト */}
