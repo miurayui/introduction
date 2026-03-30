@@ -92,6 +92,12 @@ pnpm build
 
 ---
 
+# Portfolio: Logic & Creativity
+
+> **Live Demo:** [https://portfolio-five-eta-l281ilst3v.vercel.app/]
+
+---
+
 ## 📄 License
 
 Copyright © 2026 Yui.  

@@ -35,7 +35,7 @@ const careerData: CareerItem[] = [
     id: "02",
     company: "Company Name C",
     role: "Full Stack Engineer",
-    period: "適宜改修のある時",
+    period: "2025.01 - Present",
     description: [
       "アパレルECサイトにおけるメディア機能（Article）の設計・開発を一貫して担当。記事コンテンツと商品情報の動的な連携を実現。",
       "データベース（C# / SQL）に共通の識別子（Article ID）を導入するスキーマ拡張を実施。これにより、同一記事内で紹介される色違いや型違いのバリエーション商品を効率的に一括管理・抽出するロジックを構築。"
