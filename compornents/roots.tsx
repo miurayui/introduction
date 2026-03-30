@@ -1,3 +1,12 @@
+/**
+ * @component Roots
+ * @description Renders a chronological or thematic list of career origins.
+ * @features
+ * - Data-driven rendering via `rootItems` array.
+ * - Alternating layout for desktop view (`flex-row-reverse`).
+ * - Scroll animations powered by Framer Motion (`motion/react`).
+ */
+
 "use client";
 
 import { motion } from 'motion/react';
@@ -8,14 +17,14 @@ const rootItems = [
   {
     category: "Inspiration",
     target: "尊敬する人 / 言葉",
-    content: "「完璧ではなく、血の通った不完全さを。」",
-    description: "ある建築家のこの言葉が、私の制作の指針です。デジタルの正確さの中に、あえて手書きのような揺らぎや『雫』のような生命感を宿らせたいと願うようになりました。"
+    content: "「その答えは、高専にある」という導き",
+    description: "物事の本質を知りたいが故に、公式の『本当の意味』を先生に問い続けた中学時代。納得いくまで追求したい私の性質を理解し、高専という道を示してくれた恩師の言葉が、エンジニアとしての今の私を形作る原点となる。"
   },
   {
     category: "Turning Point",
     target: "転機となった出来事",
-    content: "マイクラの「壊す」という肯定",
-    description: "数ヶ月かけて作った建築を、より良い構造のために一度壊した瞬間。執着を捨てて『先入観を疑う』ことの快感を知りました。それが今の私のエンジニアとしての姿勢に繋がっています。"
+    content: "「やりたいこと」も「得意なこと」も、両方やる選択",
+    description: "物理の先生から誘われた共同研究と、自身が熱望した反響定位の研究。二つの道で葛藤した際、『どちらもやるべきだ』という教授の言葉に背中を押される。二兎を追う決断が、自分の専門性とスキルを飛躍的に広げる要因となった。"
   }
 ];
 
@@ -27,7 +36,7 @@ export default function Roots() {
         {/* タイトルセクション */}
         <SectionTitle
           subtitle="roots"
-          title="Tarning Point"
+          title="Turning Point"
         />
 
         <div className="space-y-40">
