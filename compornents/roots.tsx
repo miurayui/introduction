@@ -53,18 +53,18 @@ export default function Roots() {
             >
               {/* 左側（または右側）：大きな見出しと言葉 */}
               <div className="md:w-1/2 space-y-6">
-                <span className="font-mono text-xs tracking-[0.2em] text-[#166534] opacity-60 block uppercase">
+                <span className="font-mono text-xs tracking-[0.2em] text-[var(--primary)] opacity-60 block uppercase">
                   {item.category}
                 </span>
-                <h4 className="text-3xl md:text-4xl font-bold leading-tight text-[#0F172A] border-l-4 border-[#166534] pl-6 py-2">
+                <h4 className="text-3xl md:text-4xl font-bold leading-tight text-[#0F172A] border-l-4 border-[var(--primary)] pl-6 py-2">
                   {item.content}
                 </h4>
               </div>
 
               {/* 右側（または左側）：詳細なエピソード */}
               <div className="md:w-1/2 pt-2">
-                <p className="text-[#475569] leading-[2] text-lg font-light italic border-b border-[#166534]/10 pb-8">
-                  <span className="text-[#166534] font-bold block mb-4 not-italic text-sm">
+                <p className="text-[#475569] leading-[2] text-lg font-light italic border-b border-[var(--primary)]/10 pb-8">
+                  <span className="text-[var(--primary)] font-bold block mb-4 not-italic text-sm">
                     — {item.target}
                   </span>
                   {item.description}

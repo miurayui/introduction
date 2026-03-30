@@ -43,7 +43,7 @@ export default function Header() {
 
       <header
         className={`fixed top-0 left-0 w-full z-[150] transition-all duration-700 ease-in-out ${isScrolled
-          ? 'py-4 bg-white/80 backdrop-blur-md shadow-sm border-b border-[#166534]/5'
+          ? 'py-4 bg-white/80 backdrop-blur-md shadow-sm border-b border-[var(--primary)]/5'
           : 'py-8 bg-transparent border-b border-transparent'
           }`}
       >
@@ -51,7 +51,7 @@ export default function Header() {
 
           {/* 左側：ロゴ */}
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className={`w-1.5 h-1.5 rounded-full bg-[#166534] transition-transform duration-500 ${isScrolled ? 'scale-110' : 'scale-100'}`} />
+            <div className={`w-1.5 h-1.5 rounded-full bg-[var(--primary)] transition-transform duration-500 ${isScrolled ? 'scale-110' : 'scale-100'}`} />
             <span className="font-mono font-bold text-[#0F172A] tracking-tighter text-lg">
               Yui.
             </span>
@@ -63,11 +63,11 @@ export default function Header() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#64748B] hover:text-[#166534] transition-colors relative group"
+                className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#64748B] hover:text-[var(--primary)] transition-colors relative group"
               >
                 {item}
                 {/* ホバー時の下線：一筆書きのメタファー */}
-                <span className="absolute -bottom-1 left-0 w-0 h-[px] bg-[#166534] opacity-40 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[px] bg-[var(--primary)] opacity-40 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -80,15 +80,15 @@ export default function Header() {
           >
             <motion.div
               animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-              className="w-6 h-[1px] bg-[#166534]"
+              className="w-6 h-[1px] bg-[var(--primary)]"
             />
             <motion.div
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-4 h-[1px] bg-[#166534]"
+              className="w-4 h-[1px] bg-[var(--primary)]"
             />
             <motion.div
               animate={isOpen ? { rotate: -45, y: -7, width: "24px" } : { rotate: 0, y: 0, width: "16px" }}
-              className="h-[1px] bg-[#166534]"
+              className="h-[1px] bg-[var(--primary)]"
             />
           </button>
         </div>
@@ -113,14 +113,14 @@ export default function Header() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index }}
-                  className="font-mono text-2xl tracking-[0.3em] uppercase text-[#0F172A] hover:text-[#166534]"
+                  className="font-mono text-2xl tracking-[0.3em] uppercase text-[#0F172A] hover:text-[var(--primary)]"
                 >
                   {item.name}
                 </motion.a>
               ))}
             </nav>
             {/* 装飾の5cmライン */}
-            <div className="absolute bottom-20 w-24 h-[1px] bg-[#166534] opacity-20" />
+            <div className="absolute bottom-20 w-24 h-[1px] bg-[var(--primary)] opacity-20" />
           </motion.div>
         )}
       </AnimatePresence>

@@ -10,7 +10,7 @@ export default function Footer() {
         {/* 左側：ブランド・スローガン */}
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-[#166534]" /> {/* 雫のドット */}
+            <div className="w-2 h-2 rounded-full bg-[var(--primary)]" /> {/* 雫のドット */}
             <span className="font-mono font-bold text-[#0F172A] tracking-tighter text-xl">
               Yui.
             </span>
@@ -22,9 +22,7 @@ export default function Footer() {
 
         {/* 中央：SNS・リンク */}
         <div className="flex gap-8 font-mono text-sm text-[#475569]">
-          <a href="https://github.com" target="_blank" className="hover:text-[#166534] transition-colors">GitHub</a>
-          <a href="https://x.com" target="_blank" className="hover:text-[#166534] transition-colors">X (Twitter)</a>
-          <a href="mailto:your-email@example.com" className="hover:text-[#166534] transition-colors">Contact</a>
+          <a href="https://github.com" target="_blank" className="hover:text-[var(--primary)] transition-colors">GitHub</a>
         </div>
 
         {/* 右側：コピーライト */}
@@ -35,7 +33,7 @@ export default function Footer() {
           </p>
           {/* 下に小さな 5cm ライン */}
           <div className="mt-4 flex justify-end">
-             <div className="w-[100px] h-[1px] bg-[#166534] opacity-20" />
+             <div className="w-[100px] h-[1px] bg-[var(--primary)] opacity-20" />
           </div>
         </div>
 
