@@ -27,5 +27,5 @@ export function middleware(req: NextRequest) {
 
 // 適用するパスを指定（サイト全体に適用する場合）
 export const config = {
-  matcher: '/:path*',
+  matcher: '/about:path*',
 };

@@ -1,3 +1,13 @@
+/**
+ * @component ReorderHero
+ * @description An interactive hero section that morphs an initial philosophical sentence into a personal introduction through sequenced letter-reordering.
+ * @features
+ * - Multi-stage animation sequence: typewriter, underline, highlight, and reorder.
+ * - Dynamic character extraction and logic-based mapping to the target phrase ("Hello I am Yui").
+ * - Seamless transition of individual characters using Framer Motion's `layout` and `staggerChildren`.
+ * - Fluid "Scroll Down" visual indicator with a custom water-drip animation using keyframes.
+ */
+
 "use client";
 
 import { useState, useMemo } from 'react';
@@ -142,12 +152,12 @@ export default function ReorderHero() {
         </motion.div>
 
         {/* 下線アニメーション */}
-        <motion.div
+        {/* <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: (status !== 'typewriter' && status !== 'reorder') ? 1 : 0 }}
           transition={{ duration: 0.8, ease: "circOut" }}
           className="absolute -bottom-4 left-0 w-full h-1 bg-white origin-left"
-        />
+        /> */}
 
       </div>
       {status === 'reorder' && (
