@@ -51,7 +51,7 @@ export default function About() {
             variants={fadeInUp}
             className="relative aspect-square max-w-sm mx-auto md:ml-auto w-full group"
           >
-            <div className="absolute inset-0 border-2 border-[#166534] translate-x-4 translate-y-4 rounded-2xl opacity-20 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
+            <div className="absolute inset-0 border-2 border-[var(--primary)] translate-x-4 translate-y-4 rounded-2xl opacity-20 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500" />
             <div className="relative w-full h-full overflow-hidden rounded-2xl bg-white shadow-xl">
               <Image
                 src="/profile.jpg"
@@ -75,12 +75,12 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold text-[#0F172A] flex items-center gap-3">
               Personal Profile
-              <span className="h-[1px] w-12 bg-[#166534] opacity-30"></span>
+              <span className="h-[1px] w-12 bg-[var(--primary)] opacity-30"></span>
             </h3>
             <dl className="space-y-4">
               {profileDetails.map((detail) => (
                 <div key={detail.label} className="flex border-b border-[#E2E8F0] pb-2">
-                  <dt className="w-32 font-mono text-sm text-[#166534] font-bold uppercase tracking-wider">
+                  <dt className="w-32 font-mono text-sm text-[var(--primary)] font-bold uppercase tracking-wider">
                     {detail.label}
                   </dt>
                   <dd className="text-[#475569] font-medium">
@@ -101,7 +101,7 @@ export default function About() {
           custom={0.4}
           className="mx-auto space-y-8 text-lg leading-relaxed text-[#475569] bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-[#E2E8F0]/50"
         >
-          <h4 className="text-xl font-bold text-[#0F172A] border-l-4 border-[#166534] pl-4">
+          <h4 className="text-xl font-bold text-[#0F172A] border-l-4 border-[var(--primary)] pl-4">
             「動かない」という、最高の謎解き。
           </h4>
           
@@ -133,7 +133,7 @@ export default function About() {
           whileInView={{ scaleX: 1, opacity: 0.3 }}
           viewport={viewportSettings}
           transition={{ duration: 1.5, delay: 0.8 }}
-          className="h-[1px] w-16 bg-[#166534] mx-auto"
+          className="h-[1px] w-16 bg-[var(--primary)] mx-auto"
         />
       </div>
     </section>

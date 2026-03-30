@@ -26,7 +26,7 @@ export default function SectionTitle({
       className={`mb-16 ${center ? 'text-center' : 'text-left'}`}
     >
       {/* 小見出し（About Me など） */}
-      <h2 className="text-sm tracking-[0.3em] text-[#166534] uppercase font-bold mb-4">
+      <h2 className="text-sm tracking-[0.3em] text-[var(--primary)] uppercase font-bold mb-4">
         {subtitle}
       </h2>
       
@@ -36,7 +36,7 @@ export default function SectionTitle({
       </h3>
 
       {/* オプション：タイトルの下に「一筆書き」のラインを入れるならここに追加 */}
-      <div className={`mt-6 h-[1px] bg-[#166534] opacity-20 w-12 ${center ? 'mx-auto' : 'mr-auto'}`} />
+      <div className={`mt-6 h-[1px] bg-[var(--primary)] opacity-20 w-12 ${center ? 'mx-auto' : 'mr-auto'}`} />
     </motion.div>
   );
 }

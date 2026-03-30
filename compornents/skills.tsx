@@ -1,9 +1,19 @@
+/**
+ * @component Skills
+ * @description Renders a categorized grid of technical skills and tools.
+ * @features
+ * - Centered, wide-grid layout for maximum visibility.
+ * - Categorized sections with horizontal decorative lines.
+ * - Consistent animation timing across all skill icons.
+ */
+
 "use client";
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { fadeInUp, viewportSettings } from '../collections/popup';
 import SectionTitle from './sectionTitle';
+import Accordion from './accordion';
 
 const skillCategories = [
   {
@@ -37,70 +47,81 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="min-h-screen bg-[#F8FAFC] flex flex-col items-center py-32 px-6 font-sans text-[#1E293B]">
-      <div className="max-w-6xl w-full">
-
-        {/* セクションタイトル */}
+    <section id="skills" className="min-h-screen bg-[#F8FAFC] py-32 px-6 flex flex-col items-center">
+      <div className="max-w-5xl w-full">
 
         <SectionTitle
-          subtitle="Capabilities"
-          title="Tools & Technologies"
+          subtitle="Skills"
+          title="Tools & Experience"
         />
 
-        {/* コンテンツエリア */}
-        <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12">
-
-          {/* 左側：サイド見出し（提示画像のスタイルを継承） */}
-          <div className="md:w-1/4 border-l-2 border-[#166534] border-opacity-20 pl-6 flex flex-col gap-4 font-mono text-sm">
-            <span className="text-[#166534] font-bold">Skills</span>
-            <div className="flex flex-col gap-2 opacity-40">
-              <span>All</span>
-              <span>Active</span>
-            </div>
-          </div>
-
-          {/* 右側：メイングリッド */}
-          <div className="md:w-3/4 space-y-20">
-            {skillCategories.map((category, catIndex) => (
-              <motion.div
-                key={category.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportSettings}
-                variants={fadeInUp}
-                custom={catIndex * 0.2}
-                className="space-y-8"
-              >
-                {/* カテゴリ名 */}
-                <h4 className="text-sm font-mono text-[#166534] tracking-widest font-bold flex items-center gap-3">
-                  <span className="w-8 h-[1px] bg-[#166534] opacity-30"></span>
+        {/* メインコンテンツ */}
+        <div className="space-y-24">
+          {skillCategories.map((category, catIndex) => (
+            <motion.div
+              key={category.title}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={fadeInUp}
+              custom={catIndex * 0.1}
+              className="space-y-10"
+            >
+              {/* カテゴリ名 */}
+              <div className="flex items-center justify-center gap-4">
+                <span className="h-[1px] w-12 bg-[var(--primary)] opacity-20"></span>
+                <h4 className="text-sm font-mono text-[var(--primary)] tracking-widest font-bold uppercase">
                   {category.title}
                 </h4>
+                <span className="h-[1px] w-12 bg-[var(--primary)] opacity-20"></span>
+              </div>
 
-                {/* アイコンリスト */}
-                <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4">
-                  {category.icons.map((icon) => (
-                    <motion.div
-                      key={icon.name}
-                      className="aspect-square bg-white border border-[#E2E8F0] rounded-2xl flex items-center justify-center p-3 transition-all duration-300 group"
-                    >
-                      <div className="relative w-full h-full flex items-center justify-center">
-                        <Image
-                          src={icon.src}
-                          alt={`${icon.name} icon`}
-                          fill
-                          className="object-contain"
-                        />
-                        {/* <span className="text-[10px] font-mono opacity-40 group-hover:opacity-100 group-hover:text-[#166534] transition-all">
-                          {icon.name}
-                        </span> */}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              {/* アイコンリスト */}
+              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-6 justify-items-center">
+                {category.icons.map((icon) => (
+                  <div 
+                    key={icon.name} 
+                    className="flex flex-col items-center gap-3 group"
+                  >
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 bg-white border border-[#E2E8F0] rounded-2xl flex items-center justify-center p-4 transition-all duration-300 group-hover:border-[var(--primary)]/30 group-hover:shadow-md">
+                      <Image
+                        src={icon.src}
+                        alt={`${icon.name} icon`}
+                        fill
+                        className="object-contain p-4"
+                        sizes="80px"
+                      />
+                    </div>
+                    <span className="text-[10px] font-mono text-[#475569] opacity-0 group-hover:opacity-100 transition-opacity">
+                      {icon.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+
+          {/* 職務経歴 */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={fadeInUp}
+            custom={0.4}
+            className="pt-24 border-t border-[#E2E8F0]"
+          >
+             <div className="flex items-center justify-center gap-4 mb-12">
+                <span className="h-[1px] w-12 bg-[var(--primary)] opacity-20"></span>
+                <h4 className="text-sm font-mono text-[var(--primary)] tracking-widest font-bold uppercase">
+                  Work Experience
+                </h4>
+                <span className="h-[1px] w-12 bg-[var(--primary)] opacity-20"></span>
+              </div>
+            
+            <div className="max-w-3xl mx-auto">
+              <Accordion />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

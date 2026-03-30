@@ -125,7 +125,7 @@ export default function ReorderHero() {
 
                 animate={{
                   opacity: (status === 'clean' && !item.keep) ? 0 : 1,
-                  color: status === 'reorder' ? "#e6daf1" : "#50725d",
+                  color: status === 'reorder' ? "#ede2f8" : "#c9e9d5",
                 }}
                 transition={{
                   layout: { duration: 1.2, ease: [0.4, 0, 0.2, 1] },
@@ -173,7 +173,7 @@ export default function ReorderHero() {
           </span>
 
           {/* 雫のアニメーション */}
-          <div className="relative w-1 h-8"> {/* 雫が落ちる軌道を確保 */}
+          <div className="relative w-1 h-8">
             <motion.div
               animate={{
                 y: [0, 25, 25],
