@@ -23,7 +23,7 @@ interface CareerItem {
 const careerData: CareerItem[] = [
   {
     id: "01",
-    company: "Company Name A",
+    company: "Company A",
     role: "Full Stack Engineer",
     period: "2024.10 - 2025.03",
     description: [
@@ -33,7 +33,7 @@ const careerData: CareerItem[] = [
   },
   {
     id: "02",
-    company: "Company Name C",
+    company: "Company B",
     role: "Full Stack Engineer",
     period: "2025.01 - Present",
     description: [
@@ -43,7 +43,7 @@ const careerData: CareerItem[] = [
   },
   {
     id: "03",
-    company: "Company Name B",
+    company: "Company C",
     role: "Frontend Developer",
     period: "2025.11 - Present",
     description: [
@@ -82,7 +82,7 @@ export default function CareerAccordion() {
             <div className="relative w-6 h-6 flex items-center justify-center">
               <div className="absolute w-4 h-[2px] bg-[var(--primary)]" />
               <motion.div 
-                animate={{ rotate: expanded === item.id ? 0 : 90 }}
+                animate={{ rotate: expanded === item.id ? 90 : 0 }}
                 className="absolute w-[2px] h-4 bg-[var(--primary)]" 
               />
             </div>
