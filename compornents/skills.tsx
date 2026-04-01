@@ -29,7 +29,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="min-h-screen bg-[#F8FAFC] py-32 px-6 flex flex-col items-center">
+    <section id="skills" className="min-h-screen bg-white py-32 px-6 flex flex-col items-center">
       <div className="max-w-5xl w-full">
 
         <SectionTitle
@@ -79,7 +79,7 @@ export default function Skills() {
                           sizes="80px"
                         />
                       </div>
-                      <span className={`text-[10px] font-mono transition-colors ${isSelected ? 'text-[var(--primary)] font-bold' : 'text-[#475569]'}`}>
+                      <span className={`text-[10px] font-mono transition-colors ${isSelected ? 'text-[var(--primary)] font-bold' : 'text-[var(--dark)]'}`}>
                         {icon.name}
                       </span>
                     </button>
@@ -87,7 +87,7 @@ export default function Skills() {
                 })}
               </div>
 
-              {/* 詳細パネル（カテゴリごとに1つ出現） */}
+              {/* 詳細パネル */}
               <AnimatePresence mode="wait">
                 {selectedSkill[category.title] && (
                   <motion.div
@@ -127,7 +127,7 @@ export default function Skills() {
                               {category.icons.find(i => i.name === selectedSkill[category.title])?.experience}
                             </span>
                           </div>
-                          <p className="text-sm text-[#475569] leading-relaxed">
+                          <p className="text-[var(--dark)] leading-relaxed">
                             {category.icons.find(i => i.name === selectedSkill[category.title])?.description}
                           </p>
                         </div>

@@ -12,21 +12,7 @@
 import { motion } from 'motion/react';
 import { fadeInUp, viewportSettings } from '../collections/popup';
 import SectionTitle from './sectionTitle';
-
-const rootItems = [
-  {
-    category: "Inspiration",
-    target: "尊敬する人 / 言葉",
-    content: "「その答えは、高専にある」という導き",
-    description: "物事の本質を知りたいが故に、公式の『本当の意味』を先生に問い続けた中学時代。納得いくまで追求したい私の性質を理解し、高専という道を示してくれた恩師の言葉が、エンジニアとしての今の私を形作る原点となる。"
-  },
-  {
-    category: "Turning Point",
-    target: "転機となった出来事",
-    content: "「やりたいこと」も「得意なこと」も、両方やる選択",
-    description: "物理の先生から誘われた共同研究と、自身が熱望した反響定位の研究。二つの道で葛藤した際、『どちらもやるべきだ』という教授の言葉に背中を押される。二兎を追う決断が、自分の専門性とスキルを飛躍的に広げる要因となった。"
-  }
-];
+import { rootItems } from '../constants/roots';
 
 export default function Roots() {
   return (
@@ -53,18 +39,18 @@ export default function Roots() {
             >
               {/* 左側（または右側）：大きな見出しと言葉 */}
               <div className="md:w-1/2 space-y-6">
-                <span className="font-mono text-xs tracking-[0.2em] text-[var(--primary)] opacity-60 block uppercase">
+                <span className="tracking-[0.2em] text-[var(--primary)] opacity-60 block uppercase">
                   {item.category}
                 </span>
-                <h4 className="text-3xl md:text-4xl font-bold leading-tight text-[#0F172A] border-l-4 border-[var(--primary)] pl-6 py-2">
+                <h4 className="text-3xl md:text-4xl font-bold leading-tight text-[var(--dark)] border-l-4 border-[var(--primary)] pl-6 py-2">
                   {item.content}
                 </h4>
               </div>
 
               {/* 右側（または左側）：詳細なエピソード */}
               <div className="md:w-1/2 pt-2">
-                <p className="text-[#475569] leading-[2] text-lg font-light italic border-b border-[var(--primary)]/10 pb-8">
-                  <span className="text-[var(--primary)] font-bold block mb-4 not-italic text-sm">
+                <p className="text-[#475569] leading-[2] text-lg border-b border-[var(--primary)]/10 pb-8">
+                  <span className="text-[var(--primary)] font-bold block mb-4 text-sm">
                     — {item.target}
                   </span>
                   {item.description}

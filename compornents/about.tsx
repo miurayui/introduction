@@ -31,7 +31,7 @@ const profileDetails: ProfileDetail[] = [
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen bg-[#F8FAFC] flex flex-col items-center px-6 py-24 font-sans text-[#1E293B]">
+    <section id="about" className="min-h-screen bg-[var(--light)] flex flex-col items-center px-6 py-24 font-sans text-[#1E293B]">
       <div className="max-w-5xl w-full space-y-20">
 
         {/* タイトルセクション */}
@@ -105,7 +105,7 @@ export default function About() {
             「動かない」という、最高の謎解き。
           </h4>
           
-          <div className="space-y-6 font-light">
+          <div className="space-y-6">
             <p>
               私のエンジニアとしての原点は、大分高専での5年間、動かないシステムの前で過ごした長い沈黙の時間にあります。
               画面に並ぶ無機質なエラーログは、私にとっては事件現場の「証拠品」のようなものでした。
@@ -115,8 +115,8 @@ export default function About() {
 
             <p>
               現代のエンジニアリングにおいて、膨大な演算をこなすAIは、最も身近で優秀な「助手」であると考えています。<br />
-              しかし、彼らが導き出す「もっともらしい正解」が、常に真実とは限りません。
-              大切なのは、提示された概念を疑い、論理の穴を突き、その先にある最適解を見出すこと。
+              しかし、AIが導き出す「もっともらしい正解」が、常に真実とは限りません。
+              大切なのは、提示された概念を疑い、論理の穴を突き、その先にある最適解を見出すことだと私は思います。
             </p>
 
             <p>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 :root {
   --background: #e0f0e8;
   --foreground: #171717;
@@ -10,6 +11,7 @@
   --warning: #ffc107;
   --info: #0dcaf0;
   --light: #f8f9fa;
+  --gray: #53575c;
   --dark: #212529;
 
   /* Spacing */
@@ -61,10 +63,13 @@ body {
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* 速度調整用のクラス（お好みで） */
 .after-typing .cursor {
-  display: none; /* 並び替えが始まったらカーソルを消す */
+  display: none;
+  /* 並び替えが始まったらカーソルを消す */
 }

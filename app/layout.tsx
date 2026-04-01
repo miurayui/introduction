@@ -30,6 +30,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/background.jpg"
+          fetchPriority="high" // これが非常に重要！
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
