@@ -27,7 +27,7 @@ export default function Footer() {
 
         {/* 右側：コピーライト */}
         <div className="text-right">
-          <p className="font-mono text-[10px] text-[var(--gray)] tracking-widest">
+          <p className="font-mono text-[10px] text-[var(--dark)] tracking-widest">
             &copy; {currentYear} YUI PORTFOLIO<br />
             MADE WITH NEXT.JS
           </p>
