@@ -31,7 +31,7 @@ const profileDetails: ProfileDetail[] = [
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen bg-[#F8FAFC] flex flex-col items-center px-6 py-24 font-sans text-[#1E293B]">
+    <section id="about" className="min-h-screen bg-[var(--light)] flex flex-col items-center px-6 py-24 font-sans text-[#1E293B]">
       <div className="max-w-5xl w-full space-y-20">
 
         {/* タイトルセクション */}

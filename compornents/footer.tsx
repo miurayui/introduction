@@ -21,13 +21,13 @@ export default function Footer() {
         </div>
 
         {/* 中央：SNS・リンク */}
-        <div className="flex gap-8 font-mono text-sm text-[#475569]">
+        <div className="flex gap-8 font-mono text-sm text-[var(--dark)]">
           <a href="https://github.com/miurayui/introduction" target="_blank" className="hover:text-[var(--primary)] transition-colors">GitHub</a>
         </div>
 
         {/* 右側：コピーライト */}
         <div className="text-right">
-          <p className="font-mono text-[10px] text-[#94A3B8] tracking-widest">
+          <p className="font-mono text-[10px] text-[var(--gray)] tracking-widest">
             &copy; {currentYear} YUI PORTFOLIO<br />
             MADE WITH NEXT.JS
           </p>

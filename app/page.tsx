@@ -1,4 +1,3 @@
-"use client";
 import  Hero  from "../compornents/hero";
 import  About  from "../compornents/about";
 import  Skills  from "../compornents/skills";

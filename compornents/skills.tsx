@@ -29,7 +29,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="min-h-screen bg-[#F8FAFC] py-32 px-6 flex flex-col items-center">
+    <section id="skills" className="min-h-screen bg-white py-32 px-6 flex flex-col items-center">
       <div className="max-w-5xl w-full">
 
         <SectionTitle

@@ -46,7 +46,7 @@ const milestones = [
 
 export default function Path() {
   return (
-    <section id="path" className="min-h-screen bg-[#F8FAFC] py-32 px-6 overflow-hidden">
+    <section id="path" className="min-h-screen bg-[var(--light)] py-32 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto">
 
         {/* タイトルセクション */}
